@@ -1,8 +1,19 @@
+/**
+* contract HelloWorld
+*/
+contract HelloWorld {
 
-contract HelloWolrd {
+	public function unlock(bytes message, bytes message1) {
+	
+		require(message1 == b'0d0a');
+        require(message1 == "\r\n");
+		
+		require(message == "hello world, sCrypt 😊");
+	}
 
-    public function unlock(bytes message) {
-        
-        require(message == "hello world");
-    }
+	public function unlock1(bytes message) {
+	   bytes aa = "\r\n\"😊\"b'0d0a' /\\$()*.?+^[](){}|<>&";
+       require(message == aa);
+	}
+
 }
