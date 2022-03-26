@@ -4,13 +4,12 @@
     {
       "type": "scrypt",
       "request": "launch",
-      "name": "Debug Hello World",
-      "program": "${workspaceFolder}/contracts/helloworld.scrypt",
-      "constructorArgs": [
-      ],
+      "name": "Debug asmString:unlock",
+      "program": "${workspaceFolder}/contracts/asmString.scrypt",
+      "constructorArgs": [],
       "pubFunc": "unlock",
       "pubFuncArgs": [
-        "\"hello world\""
+        "\"你好world! @ 😊\""
       ]
     },
     {
@@ -29,12 +28,10 @@
       "type": "scrypt",
       "request": "launch",
       "internalConsoleOptions": "openOnSessionStart",
-      "name": "Debug Counter",
-      "program": "${workspaceFolder}/contracts/counter.scrypt",
-      "constructorArgs": [
-        0
-      ],
-      "pubFunc": "increment",
+      "name": "Debug ASMLoop:unlock2",
+      "program": "${workspaceFolder}/contracts/asmLoop.scrypt",
+      "constructorArgs": [],
+      "pubFunc": "unlock2",
       "pubFuncArgs": [
         1
       ],
