@@ -4,6 +4,19 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug unary:unlock",
+      "program": "${workspaceFolder}/contracts/unary.scrypt",
+      "constructorArgs": [
+        
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1, 1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug identity:bitwiseAlgebra",
       "program": "${workspaceFolder}/contracts/identity.scrypt",
       "constructorArgs": [
@@ -38,19 +51,6 @@
       "pubFunc": "unlock",
       "pubFuncArgs": [
         9,1
-      ]
-    },
-    {
-      "type": "scrypt",
-      "request": "launch",
-      "name": "Debug Demo",
-      "program": "${workspaceFolder}/contracts/intBitwise.scrypt",
-      "constructorArgs": [
-        
-      ],
-      "pubFunc": "unlock",
-      "pubFuncArgs": [
-        1, 4
       ]
     },
     {

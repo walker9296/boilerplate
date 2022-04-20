@@ -1,0 +1,40 @@
+contract Test {
+  public function unlock(int x, int y) {
+    require(x++ == y);
+    require(x-- == y + 1);
+    require(++x == y + 1);
+    require(--x == y);
+    require(~x == ~y);
+    require(-x == 0 - y);
+    require(-unpack(b'01') == -1);
+    require(~unpack(b'01') == -126);
+    require(x++-y == 0);
+    require(unpack(b'7d') == ~-x);
+    require(-~x == unpack(b'7d'));
+    require(~~~x == ~x);
+    require(-++x == -3);
+    require(-x++ == -3);
+    require(-122 == ~++x);
+    require(~--x == -123);
+    require(~x++ == -123);
+    require(~x-- == -122);
+    require(~++x == -122);
+    require(x+++y == x + y - 1);
+    require(x---y == x - y + 1);
+    require(x+++~y == x + ~y - 1);
+    require(x---~y == x - ~y + 1);
+    require(~x+++y == ~x + y - 1);
+    require(~x---y == ~x - y + 1);
+    require(x---y+++y== x + 2);
+    require(x+++y---y== x);
+    require(x+++~y---y== -121);
+    x = 5;
+    y = 1;
+    require(x++ + ~y- --y== -121);
+    x = 5;
+    y = 1;
+    require(x++ + ~y-- -y== -121);
+    require(!!!!!!true);
+    require(!!!!!false);
+  }
+}
