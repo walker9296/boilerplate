@@ -56,6 +56,25 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug arraySub:unlock",
+      "program": "${workspaceFolder}/contracts/arraySub.scrypt",
+      "constructorArgs": [1, [{
+        "s": [{
+            "x": 0
+        }, {
+            "x": 1
+        }]
+    }], [
+            [0, 1], [2, 3]
+        ]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        0
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug arraySub1:unlock",
       "program": "${workspaceFolder}/contracts/arraySub1.scrypt",
       "constructorArgs": [1, [{
@@ -350,6 +369,39 @@
       "pubFunc": "unlock",
       "pubFuncArgs": [
         1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Main:first",
+      "program": "${workspaceFolder}/contracts/main.scrypt",
+      "constructorArgs": [
+        10
+      ],
+      "pubFunc": "first",
+      "pubFuncArgs": [
+        10, // y
+        "Sig(b'30440220420220137cd4df510823f366b76a283a0a8c4e115593f881fdbf519d32be9e1302202deeb656f503c2576fc96a5c6baa05cf6987dfd6c2bf14a4491fce929bfcc6ff41')", // sig
+        "PubKey(b'0382d088b398ee743b01ac1a91815f23df1dc945e21247014b47998bd267270183')",
+      ],
+      "txContext": {
+        "hex": "01000000015884e5db9de218238671572340b207ee85b628074e7e467096c267266baf77a40000000000ffffffff0000000000",
+        "inputIndex": 0,
+        "inputSatoshis": 100000
+      }
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Main:second",
+      "program": "${workspaceFolder}/contracts/main.scrypt",
+      "constructorArgs": [
+        10
+      ],
+      "pubFunc": "second",
+      "pubFuncArgs": [
+        3, 7
       ]
     },
     {
