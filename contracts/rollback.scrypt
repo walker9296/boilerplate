@@ -1,0 +1,47 @@
+contract Rollback {
+    int x;
+    int y;
+
+    constructor(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    function ff1(int a, int b) : int {
+		return a + b;
+    }
+
+
+    function ff2(int a, int b) : int {
+		require(a > 0);
+		require(b >= 0);
+		return a - b;
+    }
+
+    public function f1(int z) {
+        require(z == this.ff1(++this.x, this.y));
+    }
+
+    public function f2() {
+        int sum = 0;
+        loop (5) : i {
+            int x = i ;
+            sum += x;
+            if(x == 3) {
+                require(false);
+            }
+
+        }
+		require(false);
+    }
+
+
+
+    public function f3(int z) {
+		int sum = 0;
+        loop (5) : i {
+			sum += this.ff2(z - i, i);
+        }
+        require(true);
+    }
+}

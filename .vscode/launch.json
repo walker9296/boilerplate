@@ -4,6 +4,20 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug rollback:f3",
+      "program": "${workspaceFolder}/contracts/rollback.scrypt",
+      "constructorArgs": [
+        1,
+        2
+      ],
+      "pubFunc": "f3",
+      "pubFuncArgs": [
+        3
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug unary:unlock",
       "program": "${workspaceFolder}/contracts/unary.scrypt",
       "constructorArgs": [
