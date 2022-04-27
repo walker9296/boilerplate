@@ -1,0 +1,9 @@
+contract Rollback1 {
+    int x;
+    int y;
+
+    public function f1(SigHashPreimage preimage, int x) {
+        require(++x > 0 ? Tx.checkPreimage(preimage) : x < 0);
+    }
+    
+}
