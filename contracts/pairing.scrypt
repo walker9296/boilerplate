@@ -1,0 +1,32 @@
+import "ec.scrypt";
+
+library Pairing {
+    // log of ATE_LOOP_COUNT
+    static const int N = 63;
+    static const int ATE_LOOP_COUNT = 29793968203157093288;
+    static const bytes mask = reverseBytes(num2bin(1, N), N);
+
+    // compute the pairing e(P, Q)
+    static function pairing(Point P, Point Q): int {
+        Point R = Q;
+        int f = 1;
+
+        // main miller loop
+        loop (N) : i {
+            f = f * f * linefunc(R, R, P);
+            R = EC.doublePoint(R);
+
+            int j = N - 1 - i;
+            if (ATE_LOOP_COUNT & (mask << j)) {
+                f = f * linefunc(R, Q, P);
+                R = EC.addPoints(R, Q);
+            }
+        }
+        return f;
+    }
+
+    // Create a function representing the line between P1 and P2, and evaluate it at T
+    static function linefunc(Point P1, Point P2, Point T): int {
+        return 1;
+    }
+}
