@@ -1,0 +1,23 @@
+contract Issue506 {
+
+    public function and(bytes e, bytes f, bytes r) {
+        require((e & f) == r);
+    }
+
+    public function or(bytes e, bytes f, bytes r) {
+        require((e | f) == r);
+    }
+
+    public function xor(bytes e, bytes f, bytes r) {
+        require((e ^ f) == r);
+    }
+
+    public function invert(bytes e, bytes r) {
+        require(~e == r);
+    }
+
+    public function unlock(bytes e, bytes f, bytes g, bytes r) {
+        bytes a = (e & f) ^ (~ e & g);
+        require(a == r);
+    }
+}
