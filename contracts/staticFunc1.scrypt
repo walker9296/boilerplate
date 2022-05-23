@@ -1,0 +1,29 @@
+
+/**
+* struct St1
+*/
+struct St1 {
+    int[3] x;
+}
+library Clib {
+
+    St1 m_st1;
+
+    function add(int x) : int {
+
+        return this.m_st1.x[0] + this.m_st1.x[1] + this.m_st1.x[2] + x;
+    }
+
+}
+
+contract Static {
+    static function sf() : int {
+        St1 st1 = { repeat(1, 3) };
+        Clib s = new Clib(st1);
+        return s.add(3);
+    }
+
+    public function unlock(int y) {
+        require(sf() == 6);
+    }
+}

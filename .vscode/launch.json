@@ -4,6 +4,19 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug StaticFunc1:unlock",
+      "program": "${workspaceFolder}/contracts/staticFunc1.scrypt",
+      "constructorArgs": [
+        
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "internalConsoleOptions": "openOnSessionStart",
       "name": "Debug Rollback1",
       "program": "${workspaceFolder}/contracts/rollback1.scrypt",
