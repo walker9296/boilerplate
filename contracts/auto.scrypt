@@ -7,6 +7,18 @@ struct ST {
   int x;
   bool a;
 }
+
+
+struct ST1<T> {
+  T x;
+}
+
+struct ST2<T, K> {
+  T x;
+  K y;
+}
+
+
 library L<T,K> {
   
   T x;
@@ -36,6 +48,13 @@ contract TestAuto {
     auto key = PrivKey(0x444019ae);
     auto pub = PubKey(b'0001');
 
+    ST2<ST1<ST>, int> st2 = {{x4}, 100};
+    auto ast2 = st2;
+    require(ast2 == {{x4}, 100});
+
+
+    auto la = new L<ST2<ST1<ST>, int>, ST1<bool>>(ast2, {true});
+    
     require(true);
   }
 }
