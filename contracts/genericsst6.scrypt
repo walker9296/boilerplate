@@ -34,7 +34,7 @@ contract C {
     L l;
 
     function st2() : ST2<int> {
-        return this.l.st2;
+        return this.l.getSt2();
     }
 
     static function staticSt2() : ST2<int> {

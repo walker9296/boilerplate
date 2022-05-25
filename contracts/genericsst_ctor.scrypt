@@ -48,5 +48,9 @@ contract C {
         require(b == bp);
         require(c == cp);
         require(d == dp);
+        require(a == C.as);
+        require(b == C.bs);
+        require(c == C.cs);
+        require(d == C.ds);
     }
 }
