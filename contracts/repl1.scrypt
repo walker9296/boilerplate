@@ -1,0 +1,13 @@
+
+
+contract C {
+
+    public function unlock() {
+
+        loop (3) : i {
+            int k = i + 1;
+            int a = i;
+        }
+        require(true);
+    }
+}

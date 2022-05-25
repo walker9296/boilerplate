@@ -51,6 +51,19 @@
       "type": "scrypt",
       "request": "launch",
       "internalConsoleOptions": "openOnSessionStart",
+      "name": "Debug repl1:unlock",
+      "program": "${workspaceFolder}/contracts/repl1.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "internalConsoleOptions": "openOnSessionStart",
       "name": "Debug genericsst5:unlock",
       "program": "${workspaceFolder}/contracts/genericsst5.scrypt",
       "constructorArgs": [
