@@ -1,0 +1,13 @@
+struct ST<T> {
+    T x;
+}
+
+type Matrix = ST<int>[SVD.N][SVD.N];
+
+contract SVD {
+    static const int N = 1;
+    public function unlock(int k) {
+        Matrix matrix = [[{k}]];
+        require(matrix == [[{1}]]);
+    }
+}

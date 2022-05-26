@@ -15,16 +15,16 @@ struct ST2<T> {
 
 library L {
     ST2<int> st2;
-    static const ST0<int[2], int> SST0 = { 1, [2, 3] };
-    static const ST1<int[2], int> SST1 = { SST0, [4, 5] };
-    static const ST2<int> ST2 = { SST1, 100 };
+    static const ST0<int[2], int> st0 = { 1, [2, 3] };
+    static const ST1<int[2], int> st1 = { st0, [4, 5] };
+    static const ST2<int> SST2 = { st1, 100 };
 
     function getSt2() : ST2<int> {
         return this.st2;
     }
 
     static function getStaticSt2() : ST2<int> {
-        return L.ST2;
+        return L.SST2;
     }
 
 }
