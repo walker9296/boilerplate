@@ -1,0 +1,22 @@
+library Foo {
+    int var;
+
+    // function inc(int x): int {
+    //     return this.var + x;
+    // }
+}
+
+contract Bar {
+    int var;
+
+    public function main(int y) {
+        int x = 1; // <<--- x will also show 11
+        Foo foo = new Foo(10);
+        // x = foo.inc(x);
+        {
+            int x = 11;
+            x = 2; // break here
+        }
+        require(true);
+    }
+}

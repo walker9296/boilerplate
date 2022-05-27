@@ -5,6 +5,20 @@
       "type": "scrypt",
       "request": "launch",
       "internalConsoleOptions": "openOnSessionStart",
+      "name": "Debug issue204:main",
+      "program": "${workspaceFolder}/contracts/issue204.scrypt",
+      "constructorArgs": [
+        1
+      ],
+      "pubFunc": "main",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "internalConsoleOptions": "openOnSessionStart",
       "name": "Debug genericsst8:unlock",
       "program": "${workspaceFolder}/contracts/genericsst8.scrypt",
       "constructorArgs": [
