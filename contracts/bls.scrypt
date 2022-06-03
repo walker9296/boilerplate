@@ -1,0 +1,18 @@
+import "pairing.scrypt";
+
+library BLS {
+    static function verifySig(bytes msg, Point sig, Point pubKey, int y) : bool {
+        Point H = hashToPoint(msg, y);
+
+        return Pairing.pairing(pubKey, H) == Pairing.pairing(EC.G, sig);
+    }
+
+    static function hashToPoint(bytes msg, int y) : Point {
+        int x = Utils.fromLEUnsigned(sha256(msg));
+        // y^2 = x^3 + a * x + b
+        require((y * y - x * x * x + EC.a * x + EC.b) % EC.P == 0);
+        // lower y
+        require(y <= EC.P / 2);
+        return {x, y};
+    }
+}
